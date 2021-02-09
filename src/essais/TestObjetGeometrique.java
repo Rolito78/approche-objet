@@ -10,7 +10,7 @@ public class TestObjetGeometrique {
         objetGeometriques[0] = new Cercle(2);
         objetGeometriques[1] = new Rectangle(4,6);
         for (ObjetGeometrique objetGeometrique : objetGeometriques) {
-            System.out.println("Le périmetre est : "+objetGeometrique.perimetre()+" et la surface est "+objetGeometrique.surface());
+            System.out.println("Le périmetre est : "+objetGeometrique.perimetre()+" et la surface est : "+objetGeometrique.surface());
         }
     }
 

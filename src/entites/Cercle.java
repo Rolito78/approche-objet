@@ -16,6 +16,6 @@ public class Cercle implements ObjetGeometrique {
 
     @Override
     public double surface() {
-        return (Math.PI*rayon*rayon);
+        return (Math.PI*Math.pow(rayon,2));
     }
 }
