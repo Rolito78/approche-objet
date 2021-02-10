@@ -19,5 +19,8 @@ public class TestListeString {
         }
         System.out.println("Mot le plus grand : "+grandElement);
         List<String> collect = villes.stream().map(item -> item.toUpperCase(Locale.ROOT)).collect(Collectors.toList());
+        List<String> listwithoutN = villes.stream().filter(s -> s.charAt(0) != 'N').collect(Collectors.toList());
+
+        System.out.println(listwithoutN);
     }
 }
