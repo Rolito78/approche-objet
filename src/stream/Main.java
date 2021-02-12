@@ -1,9 +1,6 @@
 package stream;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -38,5 +35,36 @@ public class Main {
 
         boolean yaTilAuMoinsUnVieux = users.stream().anyMatch(user -> user.getAge() > 80);
 
+        List<String> myList = Arrays.asList("aads", "abbds", "cabfdd", "ac", "babb", "ccab", "bcba", "bbba");
+
+        List<String> myNewList = myList.stream()
+            .filter(e -> e.startsWith("a") || e.startsWith("b")) // on filtre par rapport à un boolean
+            .map(e -> e.toUpperCase(Locale.ROOT))
+            .sorted((s1, s2) -> {
+                if (s1.length() > s2.length())
+                    return 1;
+                else if (s1.length() < s2.length())
+                    return -1;
+                else
+                    return s1.compareTo(s2);
+            })
+            .collect(Collectors.toList());
+
+        for (String s : myNewList)
+        {
+            System.out.println(s);
+        }
+
+        boolean isOneStartsWithA = myList.stream()
+            .anyMatch(s -> s.startsWith("a"));
+
+        boolean allStartsWithA = myList.stream()
+            .allMatch(s -> s.startsWith("a"));
+
+        long combienCommencentParA = myList.stream()
+            .filter(s -> s.startsWith("a"))
+            .count();        int[] test = myList.stream()
+            .mapToInt(value -> value.length())
+            .toArray();
     }
 }
